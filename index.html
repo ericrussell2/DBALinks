@@ -2,44 +2,70 @@
 <html lang="en">
 
 	<head>
-	<!-- <link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator.min.css" rel="stylesheet"> -->
-	<link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator_midnight.css" rel="stylesheet">
+	<link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator.min.css" rel="stylesheet">
 
 	<style scoped>
+	
+	    body
+	    {
+	        background-image: url('https://wallpapercave.com/wp/j4eWnFh.jpg');
+	        background-color:darkblue;
+	        font-size: 16px; 
+    		font-family: Consolas,Verdana,Baskerville,Georgia;
+	        margin-top: 50px;
+	        margin-bottom: 50px;
+	        margin-left: 20px;
+	    }
+	
+	    h1
+	    {
+	        font-size: 28px; 
+	        text-align: center;
+	        color: white;
+	        max-width: 800px;
+	    }
+	    h2
+	    {
+	        font-size: 18px; 
+	        text-align: left;
+	        color: white;
+	        max-width: 800px;
+	    }	    
+	
 	    .tabulator
 		{
-	    	font-size: 16px;  
-			color:black;
-			font-family: "Courier New", Times, serif;
 			background-color:white;
-			border-style: none;  
+			border-style: none !important;  
+			max-width: 800px;
 	    }
 		.tabulator-row-even
 		{
-			background-color:white !important;
-			border-style: none;    
+			background-color:#edf2f7 !important;
+			border-style: none !important;    
 			color:black;
 	    }
 		.tabulator-row-odd
 		{
-			background-color:#F8F8F8 !important;
-			border-style: none;  			
+			background-color:white;
+			border-style: none !important;
 			color:black;
 		}
-        .tabulator .tabulator-header .tabulator-col { 
+        #example-table .tabulator-header .tabulator-col 
         {
-            background-color:#F8F8F8;
+            background-color:#4b79b4  !important;
+            color:white;
+            font-weight:normal;
+            border-style: none !important;
         }	
+		#example-table .tabulator-header-filter
+		{
+            background-color:white  !important;
+            color:black;		    
+		}        
 	</style>
 		
-	</head>
-
-	<body style="background-color:white;color:black;" >
-
-
 	<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.4.4/dist/js/tabulator.min.js"></script>
 	<script type="text/javascript" src="/js/tabulator/5.4/tabulator.min.js"></script>
-
 
 	<script type="text/javascript">
 	//sample data
@@ -77,12 +103,21 @@
 	];
 	</script>
 
+	</head>
+
+	<body>
+	    
+    <h1>DBA Links</h1>	  
+    <h2>About | Contact</h2>
+	    
 	<div id="example-table"></div>
 
 	<script>
 		var table = new Tabulator("#example-table", {
 
-	height:1200, // set height of table to enable virtual DOM
+	//height:1200, // set height of table to enable virtual DOM
+	//layout:"fitDataTable",
+	responsiveLayout:"collapse",
 
 	data: tabledata, //load initial data into table
 			
