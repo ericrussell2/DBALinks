@@ -71,13 +71,13 @@
 
 		//layout:"fitColumns", //fit columns to width of table (optional)
 		columns:[ //Define Table Columns
-			{title:"Title", field:"title", sorter:"string", width:250, hozAlign:"left", headerFilter:"input"},
+			{title:"Title", field:"title", sorter:"string", width:250, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
 			{title:"Description", field:"desc", sorter:"string", width:250, hozAlign:"left", formatter:"textarea", headerFilter:"input"},			
 			//{title:"Age", field:"age", sorter:"number", hozAlign:"left", formatter:"progress"},
 			//{title:"Favourite Color", field:"col", sorter:"string", headerSort:false},
 			{title:"Posted", field:"posted", sorter:"string", width:100, hozAlign:"left", headerFilter:"input"},
 			{title:"URL", field:"url", sorter:"string", width:400, hozAlign:"left", headerFilter:"input"},
-			{title:"Tags", field:"tags", sorter:"string", width:800, headerSort:false, hozAlign:"left", headerFilter:"input"},
+			{title:"Tags", field:"tags", sorter:"string", width:800, headerSort:false, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
 		],
 	});
 	
