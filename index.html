@@ -10,7 +10,7 @@
 	    {
 	        background-image: url('https://wallpapercave.com/wp/j4eWnFh.jpg');
 	        background-color:darkblue;
-	        font-size: 20px; 
+	        font-size: x-large; 
     		font-family: Baskerville,Georgia;
 	        margin-top: 50px;
 	        margin-bottom: 50px;
@@ -19,21 +19,21 @@
 	
 	    h1
 	    {
-	        font-size: 40px; 
+	        font-size: xx-large; 
 	        text-align: center;
 	        color: white;
 	        max-width: 900px;
 	    }
 	    h2
 	    {
-	        font-size: 25px; 
+	        font-size: x-large; 
 	        text-align: left;
 	        color: white;
 	        max-width: 900px;
 	    }
 	    h3
 	    {
-	        font-size: 20px; 
+	        font-size: large; 
 	        text-align: left;
 	        color: white;
 	        max-width: 900px;
@@ -44,7 +44,7 @@
 			background-color:white;
 			border-style: none !important;  
 			max-width: 900px;
-			font-size: 20px;
+			font-size: large;
 	    }
 		.tabulator-row-even
 		{
@@ -117,34 +117,34 @@
 	    
     <h1>DBA Links</h1>	  
     <h2>About | Contact</h2>
-	    
 	<div id="example-table"></div>
 	<h3>2023/03/31 05:37PM</h3>
 
+	</body>
+	
 	<script>
 		var table = new Tabulator("#example-table", {
 
-	//height:1200, // set height of table to enable virtual DOM
-	//layout:"fitDataTable",
-	responsiveLayout:"collapse",
+    	//height:1200, // set height of table to enable virtual DOM
+    	//layout:"fitDataTable",
+    	responsiveLayout:"collapse",
+    
+    	data: tabledata, //load initial data into table
+    			
+    	//layout:"fitColumns", //fit columns to width of table (optional)
+    	columns:[ //Define Table Columns
+    		//{title:"Title", field:"title", sorter:"string", width:350, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
+    		{title:"Description", field:"desc", sorter:"string", width:750, hozAlign:"left", formatter:"textarea", headerFilter:"input"},			
+    		{title:"Posted", field:"posted", sorter:"string", width:150, hozAlign:"left", headerFilter:"input"},
+    		{title:"URL", field:"url", sorter:"string", width:400, hozAlign:"left", headerFilter:"input"},
+    		{title:"Tags", field:"tags", sorter:"string", width:800, headerSort:false, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
+    	],
+    	});
+    
+    	//trigger an alert message when the row is clicked
+    	table.on("rowClick", function(e, row){
+    	alert("Row " + row.getIndex() + " Clicked!!!!");
+    	});
+    </script>
 
-	data: tabledata, //load initial data into table
-			
-	//layout:"fitColumns", //fit columns to width of table (optional)
-	columns:[ //Define Table Columns
-		//{title:"Title", field:"title", sorter:"string", width:350, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
-		{title:"Description", field:"desc", sorter:"string", width:750, hozAlign:"left", formatter:"textarea", headerFilter:"input"},			
-		{title:"Posted", field:"posted", sorter:"string", width:150, hozAlign:"left", headerFilter:"input"},
-		{title:"URL", field:"url", sorter:"string", width:400, hozAlign:"left", headerFilter:"input"},
-		{title:"Tags", field:"tags", sorter:"string", width:800, headerSort:false, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
-	],
-	});
-
-	//trigger an alert message when the row is clicked
-	table.on("rowClick", function(e, row){
-	alert("Row " + row.getIndex() + " Clicked!!!!");
-	});
-</script>
-
-	</body>
 </html>
