@@ -2,88 +2,92 @@
 <html lang="en">
 
 	<head>
-		<!-- <link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator.min.css" rel="stylesheet"> -->
-		<link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator_midnight.css" rel="stylesheet">
+	<!-- <link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator.min.css" rel="stylesheet"> -->
+	<link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator_midnight.css" rel="stylesheet">
 
+	<style>
+	  .tabulator {
+	    font-size: 20px;  // change font size
+	  }
+	</style>
+		
 	</head>
-
-
 
 	<body style="background-color:black;" >
 
-		
-		<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.4.4/dist/js/tabulator.min.js"></script>
-		<script type="text/javascript" src="/js/tabulator/5.4/tabulator.min.js"></script>
+
+	<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.4.4/dist/js/tabulator.min.js"></script>
+	<script type="text/javascript" src="/js/tabulator/5.4/tabulator.min.js"></script>
 
 
-		<script type="text/javascript">
+	<script type="text/javascript">
 	//sample data
 	var tabledata = [
-		{id:1, title:"SQL Server Management Studio (SSMS) | Full Course <ul><li>1</li><li>2</li></ul>"
-			, desc:"In this comprehensive video you will learn the features of SQL Server Management Studio (SSMS). You will start with connecting SSMS to SQL Server and then start navigating and writing SQL queries."
-			, posted:"2021-04-12"
-			, url:"https://www.youtube.com/watch?v=Q8gBvsUjTLw"
-			, tags:"sqlserver,ssms,training"
-			},
-		{id:2, title:"APIs Explained | Real World Examples"
-			, desc:"You will learn about the many feature of SQL Server Management Studio."
-			, posted:"2018-06-02"
-			, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
-			, tags:"api,tutorial,programming"
-			},
-		{id:3, title:"Christine Lobowski"
-			, desc:"Earlier this week, I blogged about the automatic cleanup process that that will clean up the SSIS catalog logging tables. This nightly process removes data for operations that are older than 365 days. "
-			, posted:"2022-07-09"
-			, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
-			, tags:"api,tutorial,programming"			
-			},
-		{id:4, title:"To investigate more deeply, we’ll open up the stored procedure [internal]."
-			, desc:"Some of these tables can grow quite large, but since the process runs each night, the percent of data being deleted is relatively small. So why does it take so long to run?"
-			, posted:"2023-07-30"
-			, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
-			, tags:"api,tutorial,programming"
-			},
-		{id:5, title:"However, what you’d find is substantially simpler."
-			, desc:"In this post, I’ll show to you one of the main reasons this purge process is slow, and will share a more efficient way of performing this delete operation."
-			, posted:"2015-10-11"
-			, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
-			, tags:"api,tutorial,programming"
-			},
+	{id:1, title:"SQL Server Management Studio (SSMS) | Full Course <ul><li>1</li><li>2</li></ul>"
+		, desc:"In this comprehensive video you will learn the features of SQL Server Management Studio (SSMS). You will start with connecting SSMS to SQL Server and then start navigating and writing SQL queries."
+		, posted:"2021-04-12"
+		, url:"https://www.youtube.com/watch?v=Q8gBvsUjTLw"
+		, tags:"sqlserver,ssms,training"
+		},
+	{id:2, title:"APIs Explained | Real World Examples"
+		, desc:"You will learn about the many feature of SQL Server Management Studio."
+		, posted:"2018-06-02"
+		, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
+		, tags:"api,tutorial,programming"
+		},
+	{id:3, title:"Christine Lobowski"
+		, desc:"Earlier this week, I blogged about the automatic cleanup process that that will clean up the SSIS catalog logging tables. This nightly process removes data for operations that are older than 365 days. "
+		, posted:"2022-07-09"
+		, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
+		, tags:"api,tutorial,programming"			
+		},
+	{id:4, title:"To investigate more deeply, we’ll open up the stored procedure [internal]."
+		, desc:"Some of these tables can grow quite large, but since the process runs each night, the percent of data being deleted is relatively small. So why does it take so long to run?"
+		, posted:"2023-07-30"
+		, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
+		, tags:"api,tutorial,programming"
+		},
+	{id:5, title:"However, what you’d find is substantially simpler."
+		, desc:"In this post, I’ll show to you one of the main reasons this purge process is slow, and will share a more efficient way of performing this delete operation."
+		, posted:"2015-10-11"
+		, url:"https://www.youtube.com/watch?v=ZveW4_ZJtVY"
+		, tags:"api,tutorial,programming"
+		},
 	];
 	</script>
-	
+
 	<div id="example-table"></div>
-	
+
 	<script>
-			var table = new Tabulator("#example-table", {
+		var table = new Tabulator("#example-table", {
 
-		height:1200, // set height of table to enable virtual DOM
-		data: tabledata, //load initial data into table
+	height:1200, // set height of table to enable virtual DOM
+	data: tabledata, //load initial data into table
 
-		//backgroundColor: black,
-		//borderColor: white,
+	//backgroundColor: black,
+	//borderColor: white,
 
-		//headerBorderColor: white,
-		//headerTextColor: white,
+	//headerBorderColor: white,
+	//headerTextColor: white,
 
-		//rowTextColor: white,
-		//rowBorderColor: white,
+	//rowTextColor: white,
+	//rowBorderColor: white,
 
-		//layout:"fitColumns", //fit columns to width of table (optional)
-		columns:[ //Define Table Columns
-			{title:"Title", field:"title", sorter:"string", width:250, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
-			{title:"Description", field:"desc", sorter:"string", width:250, hozAlign:"left", formatter:"textarea", headerFilter:"input"},			
-			//{title:"Age", field:"age", sorter:"number", hozAlign:"left", formatter:"progress"},
-			//{title:"Favourite Color", field:"col", sorter:"string", headerSort:false},
-			{title:"Posted", field:"posted", sorter:"string", width:80, hozAlign:"left", headerFilter:"input"},
-			{title:"URL", field:"url", sorter:"string", width:400, hozAlign:"left", headerFilter:"input"},
-			{title:"Tags", field:"tags", sorter:"string", width:800, headerSort:false, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
-		],
+	//layout:"fitColumns", //fit columns to width of table (optional)
+	columns:[ //Define Table Columns
+		{title:"Title", field:"title", sorter:"string", width:250, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
+		{title:"Description", field:"desc", sorter:"string", width:250, hozAlign:"left", formatter:"textarea", headerFilter:"input"},			
+		//{title:"Age", field:"age", sorter:"number", hozAlign:"left", formatter:"progress"},
+		//{title:"Favourite Color", field:"col", sorter:"string", headerSort:false},
+		{title:"Posted", field:"posted", sorter:"string", width:80, hozAlign:"left", headerFilter:"input"},
+		{title:"URL", field:"url", sorter:"string", width:400, hozAlign:"left", headerFilter:"input"},
+		{title:"Tags", field:"tags", sorter:"string", width:800, headerSort:false, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
+	],
 	});
-	
+
 	//trigger an alert message when the row is clicked
 	table.on("rowClick", function(e, row){
-		alert("Row " + row.getIndex() + " Clicked!!!!");
+	alert("Row " + row.getIndex() + " Clicked!!!!");
 	});
 </script>
 
