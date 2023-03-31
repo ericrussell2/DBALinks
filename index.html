@@ -5,27 +5,31 @@
 	<!-- <link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator.min.css" rel="stylesheet"> -->
 	<link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator_midnight.css" rel="stylesheet">
 
-	<style>
+	<style scoped>
 	    .tabulator
 		{
-	    	font-size: 16px !important;  // change font size
-			color:black !important;
-			font-face:Trebuchet !important;
-			background-color:white !important;
-			border-style: none !important;  
+	    	font-size: 16px;  
+			color:black;
+			font-family: "Courier New", Times, serif;
+			background-color:white;
+			border-style: none;  
 	    }
 		.tabulator-row-even
 		{
 			background-color:white !important;
-			border-style: none !important;    
-			color:black !important;
+			border-style: none;    
+			color:black;
 	    }
 		.tabulator-row-odd
 		{
-			background-color:AliceBlue !important;
-			border-style: none !important;  			
-			color:black !important;
+			background-color:#F8F8F8 !important;
+			border-style: none;  			
+			color:black;
 		}
+        .tabulator .tabulator-header .tabulator-col { 
+        {
+            background-color:#F8F8F8;
+        }	
 	</style>
 		
 	</head>
@@ -79,13 +83,14 @@
 		var table = new Tabulator("#example-table", {
 
 	height:1200, // set height of table to enable virtual DOM
+
 	data: tabledata, //load initial data into table
 			
 	//layout:"fitColumns", //fit columns to width of table (optional)
 	columns:[ //Define Table Columns
 		{title:"Title", field:"title", sorter:"string", width:300, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
 		{title:"Description", field:"desc", sorter:"string", width:300, hozAlign:"left", formatter:"textarea", headerFilter:"input"},			
-		{title:"Posted", field:"posted", sorter:"string", width:100, hozAlign:"left", headerFilter:"input"},
+		{title:"Posted", field:"posted", sorter:"string", width:120, hozAlign:"left", headerFilter:"input"},
 		{title:"URL", field:"url", sorter:"string", width:400, hozAlign:"left", headerFilter:"input"},
 		{title:"Tags", field:"tags", sorter:"string", width:800, headerSort:false, hozAlign:"left", formatter:"textarea", headerFilter:"input"},
 	],
