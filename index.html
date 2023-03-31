@@ -10,24 +10,24 @@
 		{
 	    	font-size: 16px;  // change font size
 			font-face:Trebuchet;
-			background-color:black;
-			border: 0px solid black;  
+			background-color:white;
+			border-style: none;  
 	    }
 		.tabulator-row-even
 		{
-			background-color:black !important;
-			border: 0px solid black !important;  
+			background-color:white !important;
+			border-style: none !important;    
 	    }
 		.tabulator-row-odd
 		{
-			background-color:drakgray !important;
-			border: 0px solid black !important;  			
+			background-color:AliceBlue !important;
+			border-style: none !important;  			
 		}
 	</style>
 		
 	</head>
 
-	<body style="background-color:black;" >
+	<body style="background-color:white;color:black;" >
 
 
 	<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.4.4/dist/js/tabulator.min.js"></script>
@@ -77,15 +77,6 @@
 
 	height:1200, // set height of table to enable virtual DOM
 	data: tabledata, //load initial data into table
-
-	//backgroundColor: black,
-	//borderColor: white,
-
-	//headerBorderColor: white,
-	//headerTextColor: white,
-
-	//rowTextColor: white,
-	//rowBorderColor: white,
 
 	//layout:"fitColumns", //fit columns to width of table (optional)
 	columns:[ //Define Table Columns
